@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../KNN/.idea/KNN.iml" filepath="$PROJECT_DIR$/../KNN/.idea/KNN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LDA.iml" filepath="$PROJECT_DIR$/.idea/LDA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../BAYES/bivariate/.idea/bivariate.iml" filepath="$PROJECT_DIR$/../BAYES/bivariate/.idea/bivariate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../finalProject/.idea/finalProject.iml" filepath="$PROJECT_DIR$/../finalProject/.idea/finalProject.iml" />
+    </modules>
+  </component>
+</project>
