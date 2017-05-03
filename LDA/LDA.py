@@ -2,36 +2,40 @@ import math
 import numpy as np
 import pandas as pd
 
-def gaussian(value,mean, variance):
-    exp = np.exp(-(((value - mean) ** 2) / (2 * variance)))
-    div = np.sqrt(2 * np.pi * variance)
-    return (1 / div) * exp
 
-# ==============================================================================
-# def gaussian_multivariate(covariance,mean,value)
-#     exp = np.exp(-1/2(value-mean))
-#     div = np.sqrt(2 * np.pi * (covariance ** 1/2)
-#     return (1 / div) * exp
-#
-# ==============================================================================
-
-def normalizationBySd(matrix): 
-    for column in matrix:
-        mean = np.mean(column)
-        median = np.median(column)
-        for item in column:
-            item = item-median/mean
+def normalizationBySd(matrix):
+    result = []
+    for vector in matrix:
+        line = []
+        mean = np.mean(vector)
+        median = np.median(vector)
+        for item in vector:
+            val = (item-median/mean);
+            line.append(val)
+    result.append(line)
             
-    return matrix
+    return result
+
 
 
 def normalizationByMaxMin(matrix, max, min):
+    result =[]
     for column in matrix:
+        line = []
         for item in column:
-            item = item - min / (max-min)
+            val = (item - min) / (max-min)
+            line.append(val)
+    result.append(line)
+    return result
+        
+    
 
-    return matrix
-        
-        
+
+
+
+def predict(testVector,meansVector,covarianceMatrix):
+    inverseMatrix = np.linalg.inv(covarianceMatrix)
+    features_sub = np.subtract(testVector, meansVector)
+    return np.dot(np.dot(features_sub,inverseMatrix),np.transpose(features_sub))/5
         
  
