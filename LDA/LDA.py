@@ -5,17 +5,17 @@ import scipy.linalg as linalg
 
 
 def normalizationBySd(matrix):
-    result = []
-    for i in range(len(matrix)):
+    result = [[]]
+    for column in matrix:
         line = []
-        mean = np.mean(matrix[i])
-        median = np.median(matrix[i])
-        for j in range(len(matrix[i])):
-            val = (matrix[i][j] - median/mean);
+        mean = np.mean(column)
+        median = np.median(column)
+        for item in column:
+            val = (item - median/mean)
             line.append(val)
-    result = np.column_stack(line)
-            
-    return result
+            valResult = np.vstack([line])
+        result.append(valResult)
+    return (result)
 
 
 

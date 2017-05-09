@@ -34,15 +34,15 @@ class3 = class3.drop(['Dalc','Walc'],axis=1).as_matrix()
 class4 = class4.drop(['Dalc','Walc'],axis=1).as_matrix()
 class5 = class5.drop(['Dalc','Walc'],axis=1).as_matrix()
 
-class1 = LDA.normalizationBySd(class1)
-
+classNormalizado = LDA.normalizationBySd(class1)
+print(classNormalizado)
 # meansClasse1 = class1.mean()
 # meansClasse2 = class2.mean()
 # meansClasse3 = class3.mean()
 # meansClasse4 = class4.mean()
 # meansClasse5 = class5.mean()
-
-
+#
+#
 # print('valor')
 # print(test.as_matrix()[0])
 #
@@ -57,7 +57,7 @@ class1 = LDA.normalizationBySd(class1)
 # print(d3)
 # print(d4)
 # print(d5)
-
+#
 
 
 
