@@ -1,18 +1,19 @@
 import math
 import numpy as np
 import pandas as pd
+import scipy.linalg as linalg
 
 
 def normalizationBySd(matrix):
     result = []
-    for vector in matrix:
+    for i in range(len(matrix)):
         line = []
-        mean = np.mean(vector)
-        median = np.median(vector)
-        for item in vector:
-            val = (item-median/mean);
+        mean = np.mean(matrix[i])
+        median = np.median(matrix[i])
+        for j in range(len(matrix[i])):
+            val = (matrix[i][j] - median/mean);
             line.append(val)
-    result.append(line)
+    result = np.column_stack(line)
             
     return result
 
@@ -34,8 +35,7 @@ def normalizationByMaxMin(matrix, max, min):
 
 
 def predict(testVector,meansVector,covarianceMatrix):
-    inverseMatrix = np.linalg.inv(covarianceMatrix)
-    features_sub = np.subtract(testVector, meansVector)
-    return np.dot(np.dot(features_sub,inverseMatrix),np.transpose(features_sub))/5
-        
- 
+    expTerm = (1.0 / 2.0) * np.dot(np.dot(np.transpose((testVector - meansVector)), linalg.inv(covarianceMatrix)),(testVector - meansVector))
+    priorProb = 1.0 / 5.0
+    pdf = priorProb / (2 * math.pi * math.sqrt(linalg.det(covarianceMatrix))) * math.exp(-expTerm)
+    return pdf
