@@ -35,7 +35,8 @@ def normalizationByMaxMin(matrix, max, min):
 
 
 def predict(testVector,meansVector,covarianceMatrix):
-    expTerm = (1.0 / 2.0) * np.dot(np.dot(np.transpose((testVector - meansVector)), linalg.inv(covarianceMatrix)),(testVector - meansVector))
-    priorProb = 1.0 / 5.0
-    pdf = priorProb / (2 * math.pi * math.sqrt(linalg.det(covarianceMatrix))) * math.exp(-expTerm)
+    # expTerm = (1.0 / 2.0) * np.dot(np.dot(np.transpose((testVector - meansVector)), linalg.inv(covarianceMatrix)),(testVector - meansVector))
+    # priorProb = 1.0 / 5.0
+    # pdf = priorProb / (2 * math.pi * math.sqrt(linalg.det(covarianceMatrix))) * math.exp(-expTerm)
+    pdf = np.subtract(testVector,meansVector)
     return pdf

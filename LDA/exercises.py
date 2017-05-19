@@ -35,29 +35,29 @@ class4 = class4.drop(['Dalc','Walc'],axis=1).as_matrix()
 class5 = class5.drop(['Dalc','Walc'],axis=1).as_matrix()
 
 classNormalizado = LDA.normalizationBySd(class1)
-print(classNormalizado)
-# meansClasse1 = class1.mean()
-# meansClasse2 = class2.mean()
-# meansClasse3 = class3.mean()
-# meansClasse4 = class4.mean()
-# meansClasse5 = class5.mean()
-#
-#
-# print('valor')
-# print(test.as_matrix()[0])
-#
-# d1 = LDA.predict(test.as_matrix()[0] ,meansClasse1, covarianceMatrix)
-# d2 = LDA.predict(test.as_matrix()[0] ,meansClasse2,  covarianceMatrix)
-# d3 = LDA.predict(test.as_matrix()[0],meansClasse3, covarianceMatrix)
-# d4 = LDA.predict(test.as_matrix()[0],meansClasse4, covarianceMatrix)
-# d5 = LDA.predict(test.as_matrix()[0] ,meansClasse5, covarianceMatrix)
-#
-# print(d1)
+#print(classNormalizado)
+meansClasse1 = class1.mean()
+meansClasse2 = class2.mean()
+meansClasse3 = class3.mean()
+meansClasse4 = class4.mean()
+meansClasse5 = class5.mean()
+
+
+print('valor')
+#print(test.as_matrix()[0])
+
+d1 = LDA.predict(test.as_matrix()[0] ,meansClasse1, covarianceMatrix)
+d2 = LDA.predict(test.as_matrix()[0] ,meansClasse2,  covarianceMatrix)
+d3 = LDA.predict(test.as_matrix()[0],meansClasse3, covarianceMatrix)
+d4 = LDA.predict(test.as_matrix()[0],meansClasse4, covarianceMatrix)
+d5 = LDA.predict(test.as_matrix()[0] ,meansClasse5, covarianceMatrix)
+
+print(d1)
 # print(d2)
 # print(d3)
 # print(d4)
 # print(d5)
-#
+
 
 
 

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-dataset = pd.read_csv('wine.csv')
+dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/repositorio/LDA/wine.csv")
 X = dataset.iloc[:, 1:14].values
 y = dataset.iloc[:, 0].values
 
@@ -22,7 +22,7 @@ X_test = sc.transform(X_test)
 
 # Applying LDA
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
-lda = LDA(n_components = 2)
+lda = LDA(n_components = 5)
 X_train = lda.fit_transform(X_train, y_train)
 X_test = lda.transform(X_test)
 
