@@ -53,7 +53,7 @@ def getColor(vectorTypesOfCrime):
     return colorReturn
 
 
-df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/finalProject/datasets/crimes-in-chicago/Chicago_Crimes_2012_to_2017.csv",sep=",")
+df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/datasets/crimes-in-chicago/Chicago_Crimes_2012_to_2017.csv",sep=",")
 #df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/finalProject/datasets/smalldatasetcrimes.csv",sep=",")
 
 grouped = df.groupby(['Primary Type','Latitude','Longitude'])['Case Number'].count().reset_index(name="count")
@@ -76,7 +76,7 @@ data = Data([
             size=grouped['count']/25,
             color = grouped['color']
         ),
-        text=grouped['Primary Type'].iloc[0:40000] + " - " + str(grouped['count']),
+        text=grouped['Primary Type'].iloc[0:40000],
     )
 ])
 layout = Layout(
