@@ -22,7 +22,7 @@ from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_a
 from sklearn.model_selection import train_test_split
 
 
-folder = "/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/finalProject/datasets/br-coins/regression_sample"
+folder = "/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/datasets/br-coins/regression_sample"
 
 onlyfiles = [f for f in os.listdir(folder) if os.path.isfile(os.path.join(folder, f))]
 
