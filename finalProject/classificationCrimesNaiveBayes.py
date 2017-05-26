@@ -22,6 +22,18 @@ dataset.index = pd.DatetimeIndex(dataset.Date)
 #Select Year
 #dataset = dataset[dataset.Year == 2016]
 
+from datetime import datetime
+def getTimestamp(vectorDate):
+    timestamps = []
+    for date in vectorDate:
+        i = 0
+        timestamps.append((date - np.datetime64('1970-01-01T00:00:00Z')) / np.timedelta64(1, 's')
+)
+        i = i+1
+    return timestamps
+
+dataset.loc[:, 'timestamp'] = pd.Series(getTimestamp(dataset['Date']), index=dataset.index)
+
 #Exclude not needed columns
 columnsForExclusion = ['Ward',
                        'FBI Code',
@@ -37,6 +49,7 @@ columnsForExclusion = ['Ward',
                        "ID"]
 
 dataset = dataset.drop(columnsForExclusion,axis=1)
+
 
 
 
@@ -59,7 +72,6 @@ dataset = dataset[cols]
 
 
 print(dataset.columns.tolist())
-dataset.info()
 
 print("Dataset size",len(dataset))
 #Remove empty rows
@@ -74,37 +86,41 @@ y = dataset.iloc[:,0].values
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 0)
 
-# # Feature Scaling
+# Feature Scaling
 # from sklearn.preprocessing import StandardScaler
 # sc = StandardScaler()
 # X_train = sc.fit_transform(X_train)
 # X_test = sc.transform(X_test)
+
+
+#Applying PCA
+from sklearn.decomposition import PCA
+pca = PCA(n_components = 2)
+X_train = pca.fit_transform(X_train)
+X_test = pca.transform(X_test)
+explained_variance = pca.explained_variance_ratio_
+
 #
-#
-# #Applying PCA
-# from sklearn.decomposition import PCA
-# pca = PCA(n_components = 2)
-# X_train = pca.fit_transform(X_train)
-# X_test = pca.transform(X_test)
-# explained_variance = pca.explained_variance_ratio_
-#
-#
-# #Fitting Naive Bayes to the Training set
-# from sklearn.naive_bayes import GaussianNB
-# classifier = GaussianNB()
-# classifier.fit(X_train, y_train)
-#
-#
-# # Predicting the Test set results
-# y_pred = classifier.predict(X_test)
-#
-# print(accuracy_score(y_test,y_pred))
-#
-#
-#
-#
+##Fitting Naive Bayes to the Training set
+#from sklearn.naive_bayes import GaussianNB
+#classifier = GaussianNB()
+#classifier.fit(X_train, y_train)
+
+# Fitting SVM to the Training set
+from sklearn.svm import SVC
+classifier = SVC(kernel = 'linear', random_state = 0)
+classifier.fit(X_train, y_train)
+
+# Predicting the Test set results
+y_pred = classifier.predict(X_test)
+
+print(accuracy_score(y_test,y_pred))
+
+
+
+
 # import matplotlib.pyplot as plt
 # mu, sigma = 200, 25
 # df = dataset.sort(columns='Primary Type',ascending=True).copy()
