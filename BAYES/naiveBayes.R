@@ -60,7 +60,7 @@ getPrediction <- function(vetorEntrada){
 }
 
 #Separacao em dados de treinamento e dados de teste
-trainingSetosa <- data[1:35,]
+trainingSetosa <- data[1:15,]
 trainingVersicolor <- data[51:85,]
 trainingVirginica <- data[101:135,]
 

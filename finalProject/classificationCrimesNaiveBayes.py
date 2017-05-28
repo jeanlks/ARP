@@ -1,39 +1,51 @@
+
+
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
 import numpy as np
-from sklearn.preprocessing import Imputer
-from sklearn.metrics import accuracy_score
+import  pickle
+
+def removeOutliers(data, m=3):
+    new_data = data
+    clean_data = new_data[np.abs(new_data-new_data.mean())<=(m*new_data.std())]
+    return clean_data
+
+#PERIODS OF THE DAY 1 = MORNING 2 = AFTERNOON AND 3 = NIGHT
+def getPeriodOfTheDay(vectorHour):
+    periods = []
+    for hour in vectorHour:
+        if(hour>12 and hour<=20):
+            periods.append(2)
+        if(hour > 6 and hour<=12):
+            periods.append(1)
+        if(hour >20 and hour<=23):
+            periods.append(3)
+        if(hour>=0 and hour<=6):
+            periods.append(3)
+    return  periods
 
 
 dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/datasets/crimes-in-chicago/Chicago_Crimes_2012_to_2017.csv",sep=",")
-#dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/datasets/smalldatasetcrimes.csv",sep=",")
+#df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/finalProject/datasets/smalldatasetcrimes.csv",sep=",")
+dataset = dataset[dataset.Year == 2016]
 
-# convert dates to pandas datetime format
+types_to_save = ["THEFT",
+                 "BATTERY"]
+
+dataset = dataset[dataset['Primary Type'].isin(types_to_save)]
+
+
+#convert dates to pandas datetime format
 dataset.Date = pd.to_datetime(dataset.Date, format='%m/%d/%Y %I:%M:%S %p')
 # setting the index to be the date will help us a lot later on
 
-dataset.index = pd.DatetimeIndex(dataset.Date)
-#
-# dataset['date'] = str(dataset['Date'].dt.date)
-# dataset['time'] = str(dataset['Date'].dt.time)
 
 
-#Select Year
-dataset = dataset[dataset.Year == 2016]
+#dataset.loc[:, 'month'] = dataset['Date'].dt.month
+dataset.loc[:,'day'] = dataset['Date'].dt.day
+dataset.loc[:,'Period'] = getPeriodOfTheDay(dataset['Date'].dt.hour)
 
-from datetime import datetime
-def getTimestamp(vectorDate):
-    timestamps = []
-    for date in vectorDate:
-        i = 0
-        timestamps.append((date - np.datetime64('1970-01-01T00:00:00Z')) / np.timedelta64(1, 's')
-)
-        i = i+1
-    return timestamps
-
-dataset.loc[:, 'timestamp'] = pd.Series(getTimestamp(dataset['Date']), index=dataset.index)
-
+# print(len(dataset['Date'].dt.hour))
+# print(len( getPeriodOfTheDay(dataset['Date'].dt.hour)))
 #Exclude not needed columns
 columnsForExclusion = ['Ward',
                        'FBI Code',
@@ -43,27 +55,33 @@ columnsForExclusion = ['Ward',
                        "Beat",
                        "Updated On",
                        "Unnamed: 0",
-                       "Block",
                        "Date",
                        "Location",
-                       "ID"]
+                       "ID",
+                        "Block",
+                       "X Coordinate",
+                       "Y Coordinate",
+                       "District",
+                       "Community Area",
+                       "Description",
+                       "Year"]
 
 dataset = dataset.drop(columnsForExclusion,axis=1)
 
 
-
-
 #Get dummies and categorical values for columns
-columnsForDummies = ["Domestic"]
+columnsForDummies = ["Period"]
 dataset = pd.get_dummies(dataset,columns=columnsForDummies)
 
 dataset['Primary Type'] = pd.Categorical(dataset['Primary Type'])
 dataset['Location Description'] = pd.Categorical(dataset['Location Description'])
-dataset['Description']          = pd.Categorical(dataset['Description'])
+dataset['Domestic'] = pd.Categorical(dataset["Domestic"])
+
 
 dataset['Primary Type'] = dataset['Primary Type'].cat.codes
-dataset['Location Description']  = dataset['Location Description'] .cat.codes
-dataset['Description']  = dataset['Description'] .cat.codes
+dataset['Location Description']  = dataset['Location Description'].cat.codes
+dataset['Domestic'] = dataset['Domestic'].cat.codes
+
 
 
 #Rearranging columns
@@ -76,43 +94,34 @@ print(dataset.columns.tolist())
 print("Dataset size",len(dataset))
 #Remove empty rows
 
+
 dataset.dropna(inplace=True)
 
 #Splitting dependent and independent variables
-X = dataset.iloc[:,1:11].values
+X = dataset.iloc[:,1:13].values
 y = dataset.iloc[:,0].values
 
 
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 1)
 
-# Feature Scaling
-# from sklearn.preprocessing import StandardScaler
-# sc = StandardScaler()
-# X_train = sc.fit_transform(X_train)
-# X_test = sc.transform(X_test)
+with open('naive_bayes.pkl', 'rb') as fid:
+    classifier = pickle.load(fid)
 
-
-#Applying PCA
-from sklearn.decomposition import PCA
-pca = PCA(n_components = 2)
-X_train = pca.fit_transform(X_train)
-X_test = pca.transform(X_test)
-explained_variance = pca.explained_variance_ratio_
-
-
-#Fitting Naive Bayes to the Training set
-from sklearn.naive_bayes import GaussianNB
-classifier = GaussianNB()
-classifier.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)
 
-print(accuracy_score(y_test,y_pred))
 
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
 
+# Applying k-Fold Cross Validation
+from sklearn.model_selection import cross_val_score
+accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
+print(accuracies.mean())
+print(accuracies.std())
 
 
