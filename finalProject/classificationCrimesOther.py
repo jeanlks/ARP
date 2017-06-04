@@ -63,6 +63,16 @@ def getCrimesByRadius(lon, lat, df, radius):
             df = df.drop(idx,axis=0)
     return df
 
+def printAccuracy(y_test,y_pred):
+    print("Accuracy: ",accuracy_score(y_test,y_pred))
+
+#Fitting Naive Bayes to the Training set
+def getClassifier(X_train, y_train):
+    from sklearn.naive_bayes import GaussianNB
+    classifier = GaussianNB()
+    classifier.fit(X_train, y_train)
+    return classifier
+
 dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/datasets/crimes-in-chicago/Chicago_Crimes_2012_to_2017.csv",sep=",")
 #df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/finalProject/datasets/smalldatasetcrimes.csv",sep=",")
 dataset = dataset[dataset.Year == 2016]
@@ -138,33 +148,24 @@ print("Dataset size",len(dataset))
 print(dataset.columns.tolist())
 
 
-# dataset =  getCrimesByRadius(-87.70681861,41.86407316,dataset,3)
-print("tamanho dataset",len(dataset))
-dataset = dataset[dataset.apply(lambda x: haversine(-87.70681861,41.86407316,x['Longitude'],x['Latitude'])<3, axis=1)]
-print("tamanho agora", len(dataset))
-#
-# #Splitting dependent and independent variables
-# X = dataset.iloc[:,1:11].values
-# y = dataset.iloc[:,0].values
-#
-#
-#
-#
-# #Fitting Naive Bayes to the Training set
-# from sklearn.naive_bayes import GaussianNB
-#
-#
-#
-# classifier = GaussianNB()
-# classifier.fit(X_train, y_train)
-#
-# # Predicting the Test set results
-# y_pred = classifier.predict(X_test)
-#
-#
-# # from sklearn.metrics import confusion_matrix
-# # cm = confusion_matrix(y_test, y_pred)
-#
-#
-#
-#
+#Here we can  separate by radius and create a classifier for each radius
+radius  = 3
+
+y_predAccuracy  = []
+y_testAccuracy = []
+
+for idx,row in dataset.iterrows():
+    lon = dataset.iloc[idx]['Longitude'].astype(float)
+    lat = dataset.iloc[idx]['Latitude'].astype(float)
+    X_test = row.iloc[1:11]
+    y_test = row.iloc[0]
+    y_testAccuracy.append(y_test)
+    df = dataset[dataset.apply(lambda x: haversine(lon,lat,x['Longitude'],x['Latitude'])<radius, axis=1)]
+    #Splitting dependent and independent variables
+    X_train = df.iloc[:,1:11].values
+    y_train = df.iloc[:,0].values
+    classifier = getClassifier(X_train,y_train)
+
+    y_predAccuracy.append(classifier.predict(X_test))
+    printAccuracy(y_predAccuracy,y_testAccuracy)
+

@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de23a54c-1c5b-4091-b284-22dc2b300174" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesByYear.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finalProject/GroupBy.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/GenerateModel.py" afterPath="$PROJECT_DIR$/finalProject/GenerateModel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" afterPath="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py" afterPath="$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesOther.py" afterPath="$PROJECT_DIR$/finalProject/classificationCrimesOther.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +17,8 @@
       <file leaf-file-name="classificationCrimesOther.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesOther.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="143" column="35" lean-forward="false" selection-start-line="143" selection-start-column="35" selection-end-line="143" selection-end-column="35" />
+            <state relative-caret-position="140">
+              <caret line="160" column="24" lean-forward="false" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
               <folding>
                 <element signature="e#2#21#0" expanded="true" />
               </folding>
@@ -263,11 +257,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/finalProject/classificationCrimesOther.py</url>
-          <line>61</line>
-          <option name="timeStamp" value="7" />
+          <line>157</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="9" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -503,13 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///anaconda/envs/tensorflow/lib/python3.5/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="322" column="0" lean-forward="false" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -528,13 +515,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="2041" column="0" lean-forward="false" selection-start-line="2041" selection-start-column="0" selection-end-line="2041" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda/envs/tensorflow/lib/python3.5/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda/envs/tensorflow/lib/python3.5/site-packages/pandas/core/indexing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="187" column="0" lean-forward="false" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesOther.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="143" column="35" lean-forward="false" selection-start-line="143" selection-start-column="35" selection-end-line="143" selection-end-column="35" />
+        <state relative-caret-position="140">
+          <caret line="160" column="24" lean-forward="false" selection-start-line="160" selection-start-column="24" selection-end-line="160" selection-end-column="24" />
           <folding>
             <element signature="e#2#21#0" expanded="true" />
           </folding>
