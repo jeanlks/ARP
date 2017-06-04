@@ -26,12 +26,12 @@ def getPeriodOfTheDay(vectorHour):
 
 dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/datasets/crimes-in-chicago/Chicago_Crimes_2012_to_2017.csv",sep=",")
 #df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/finalProject/datasets/smalldatasetcrimes.csv",sep=",")
-dataset = dataset[dataset.Year == 2016]
+#dataset = dataset[dataset.Year == 2016]
 
-types_to_save = ["THEFT",
-                 "BATTERY"]
-
-dataset = dataset[dataset['Primary Type'].isin(types_to_save)]
+# types_to_save = ["THEFT",
+#                  "BATTERY"]
+#
+# dataset = dataset[dataset['Primary Type'].isin(types_to_save)]
 
 
 #convert dates to pandas datetime format
@@ -107,8 +107,11 @@ y = dataset.iloc[:,0].values
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 1)
 
-with open('knn.pkl', 'rb') as fid:
-    classifier = pickle.load(fid)
+#KNN Classifier
+from sklearn.neighbors import KNeighborsClassifier
+classifier = KNeighborsClassifier(n_neighbors = 100, metric = 'minkowski',p=1)
+classifier.fit(X_train, y_train)
+
 
 
 # Predicting the Test set results

@@ -2,12 +2,24 @@
 
 import pandas as pd
 import numpy as np
+from pandas.tseries.holiday import  USFederalHolidayCalendar
 import  pickle
 
 def removeOutliers(data, m=3):
     new_data = data
     clean_data = new_data[np.abs(new_data-new_data.mean())<=(m*new_data.std())]
     return clean_data
+
+def getHolidays(dates):
+    holidaysVectorReturn  = []
+    cal = USFederalHolidayCalendar()
+    holidays = cal.holidays(start='2015-01-01', end='2017-12-31').to_pydatetime()
+    for idx, date in enumerate(dates):
+         if date in holidays:
+             holidaysVectorReturn.append(1)
+         else:
+             holidaysVectorReturn.append(0)
+    return  holidaysVectorReturn
 
 #PERIODS OF THE DAY 1 = MORNING 2 = AFTERNOON AND 3 = NIGHT
 def getPeriodOfTheDay(vectorHour):
@@ -29,7 +41,7 @@ dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/A
 dataset = dataset[dataset.Year == 2016]
 
 types_to_save = ["THEFT",
-                 "BATTERY"]
+                 "HOMICIDE"]
 
 dataset = dataset[dataset['Primary Type'].isin(types_to_save)]
 
@@ -107,9 +119,10 @@ y = dataset.iloc[:,0].values
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 1)
 
-with open('naive_bayes.pkl', 'rb') as fid:
-    classifier = pickle.load(fid)
-
+#Fitting Naive Bayes to the Training set
+from sklearn.naive_bayes import GaussianNB
+classifier = GaussianNB()
+classifier.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)

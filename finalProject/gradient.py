@@ -1,14 +1,8 @@
-
-
+import pandas
+from sklearn import model_selection
+from sklearn.ensemble import GradientBoostingClassifier
 import pandas as pd
-import numpy as np
-import  pickle
-def removeOutliers(data, m=3):
-    new_data = data
-    clean_data = new_data[np.abs(new_data-new_data.mean())<=(m*new_data.std())]
-    return clean_data
 
-#PERIODS OF THE DAY 1 = MORNING 2 = AFTERNOON AND 3 = NIGHT
 def getPeriodOfTheDay(vectorHour):
     periods = []
     for hour in vectorHour:
@@ -26,11 +20,6 @@ def getPeriodOfTheDay(vectorHour):
 dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/datasets/crimes-in-chicago/Chicago_Crimes_2012_to_2017.csv",sep=",")
 #df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/finalProject/datasets/smalldatasetcrimes.csv",sep=",")
 dataset = dataset[dataset.Year == 2016]
-
-types_to_save = ["THEFT",
-                 "HOMICIDE"]
-
-dataset = dataset[dataset['Primary Type'].isin(types_to_save)]
 
 
 #convert dates to pandas datetime format
@@ -98,38 +87,12 @@ dataset.dropna(inplace=True)
 
 #Splitting dependent and independent variables
 X = dataset.iloc[:,1:13].values
-y = dataset.iloc[:,0].values
+Y = dataset.iloc[:,0].values
 
 
-
-# Splitting the dataset into the Training set and Test set
-from sklearn.cross_validation import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 1)
-
-# #Feature Scaling
-# from sklearn.preprocessing import StandardScaler
-# sc = StandardScaler()
-# X_train = sc.fit_transform(X_train)
-# X_test = sc.transform(X_test)
-
-
-##Applying PCA
-# from sklearn.decomposition import PCA
-# pca = PCA(n_components = 2)
-# X_train = pca.fit_transform(X_train)
-# X_test = pca.transform(X_test)
-# explained_variance = pca.explained_variance_ratio_
-
-
-#Fitting Naive Bayes to the Training set
-from sklearn.naive_bayes import GaussianNB
-classifier = GaussianNB()
-classifier.fit(X_train, y_train)
-
-# #KNN Classifier
-# from sklearn.neighbors import KNeighborsClassifier
-# classifier = KNeighborsClassifier(n_neighbors = 100, metric = 'minkowski',p=1)
-# classifier.fit(X_train, y_train)
-
-with open('naive_bayes.pkl', 'wb') as fid:
-    pickle.dump(classifier, fid)
+seed = 7
+num_trees = 100
+kfold = model_selection.KFold(n_splits=10, random_state=seed)
+model = GradientBoostingClassifier(n_estimators=num_trees, random_state=seed)
+results = model_selection.cross_val_score(model, X, Y, cv=kfold)
+print(results.mean())
