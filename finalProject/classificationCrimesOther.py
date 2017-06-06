@@ -78,8 +78,8 @@ dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/A
 dataset = dataset[dataset.Year == 2016]
 
 types_to_save = ["THEFT",
-                 "BATTERY",
-                 "CRIMINAL DAMAGE"]
+                 "NARCOTICS",
+                ]
 
 dataset = dataset[dataset['Primary Type'].isin(types_to_save)]
 
@@ -91,7 +91,7 @@ dataset.Date = pd.to_datetime(dataset.Date, format='%m/%d/%Y %I:%M:%S %p')
 #Get holidays
 dataset.loc[:,'holiday'] = getHolidays(dataset['Date'])
 dataset.loc[:, 'month'] = dataset['Date'].dt.month
-#dataset.loc[:,'day'] = dataset['Date'].dt.day
+dataset.loc[:,'day'] = dataset['Date'].dt.day
 dataset.loc[:,'Period'] = getPeriodOfTheDay(dataset['Date'].dt.hour)
 
 
@@ -149,23 +149,30 @@ print(dataset.columns.tolist())
 
 
 #Here we can  separate by radius and create a classifier for each radius
-radius  = 3
+radius  = 5
 
 y_predAccuracy  = []
 y_testAccuracy = []
 
+columnsLatLong = ["Latitude",
+                  "Longitude"]
+
 for idx,row in dataset.iterrows():
+    size = len(dataset);
     lon = dataset.iloc[idx]['Longitude'].astype(float)
     lat = dataset.iloc[idx]['Latitude'].astype(float)
     X_test = row.iloc[1:11]
     y_test = row.iloc[0]
     y_testAccuracy.append(y_test)
     df = dataset[dataset.apply(lambda x: haversine(lon,lat,x['Longitude'],x['Latitude'])<radius, axis=1)]
+   # df = dataset.drop(columnsLatLong, axis=1)
     #Splitting dependent and independent variables
     X_train = df.iloc[:,1:11].values
     y_train = df.iloc[:,0].values
     classifier = getClassifier(X_train,y_train)
 
     y_predAccuracy.append(classifier.predict(X_test))
+
+    print("Idx: ",idx, " of a total of ",size)
     printAccuracy(y_predAccuracy,y_testAccuracy)
 

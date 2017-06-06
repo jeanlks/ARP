@@ -3,12 +3,7 @@
 import pandas as pd
 import numpy as np
 from pandas.tseries.holiday import  USFederalHolidayCalendar
-import  pickle
-
-def removeOutliers(data, m=3):
-    new_data = data
-    clean_data = new_data[np.abs(new_data-new_data.mean())<=(m*new_data.std())]
-    return clean_data
+from math import radians, cos, sin, asin, sqrt
 
 def getHolidays(dates):
     holidaysVectorReturn  = []
@@ -35,16 +30,45 @@ def getPeriodOfTheDay(vectorHour):
             periods.append(3)
     return  periods
 
+def haversine(lon1, lat1, lon2, lat2):
+    """
+    Calculate the great circle distance between two points 
+    on the earth (specified in decimal degrees)
+    """
+    # convert decimal degrees to radians
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+
+    # haversine formula
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+    a = sin(dlat/2)**2 + cos(lat1) * cos(lat2) * sin(dlon/2)**2
+    c = 2 * asin(sqrt(a))
+    r = 6371 # Radius of earth in kilometers. Use 3956 for miles
+
+    return c * r
+
+def removeOutliers(df,classes,radius=10):
+ dfReturn = pd.DataFrame()
+ for classe in classes:
+    print(classe)
+    dfMean =  df[df['Primary Type']==classe]
+    meanLon = dfMean['Longitude'].mean()
+    meanLat = dfMean['Latitude'].mean()
+    filtered = df[df.apply(lambda x: haversine(meanLon, meanLat, x['Longitude'], x['Latitude']) < radius and x['Primary Type'] == classe, axis=1)]
+    dfReturn = pd.concat([dfReturn, filtered], axis=0)
+ return dfReturn
 
 dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/datasets/crimes-in-chicago/Chicago_Crimes_2012_to_2017.csv",sep=",")
-#df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/finalProject/datasets/smalldatasetcrimes.csv",sep=",")
+
+classes = ["THEFT",
+           "BATTERY",
+           "ASSAULT",
+           "BURGLARY"]
+
+dataset = dataset[dataset['Primary Type'].isin(classes)]
 dataset = dataset[dataset.Year == 2016]
-
-types_to_save = ["THEFT",
-                 "HOMICIDE"]
-
-dataset = dataset[dataset['Primary Type'].isin(types_to_save)]
-
+dataset = removeOutliers(dataset,classes=classes,radius=5)
+print(dataset)
 
 #convert dates to pandas datetime format
 dataset.Date = pd.to_datetime(dataset.Date, format='%m/%d/%Y %I:%M:%S %p')
@@ -52,12 +76,11 @@ dataset.Date = pd.to_datetime(dataset.Date, format='%m/%d/%Y %I:%M:%S %p')
 
 
 
-#dataset.loc[:, 'month'] = dataset['Date'].dt.month
+dataset.loc[:, 'month'] = dataset['Date'].dt.month
 dataset.loc[:,'day'] = dataset['Date'].dt.day
 dataset.loc[:,'Period'] = getPeriodOfTheDay(dataset['Date'].dt.hour)
 
-# print(len(dataset['Date'].dt.hour))
-# print(len( getPeriodOfTheDay(dataset['Date'].dt.hour)))
+
 #Exclude not needed columns
 columnsForExclusion = ['Ward',
                        'FBI Code',
