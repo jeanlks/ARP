@@ -6,14 +6,10 @@ import plotly.plotly as py
 from plotly.graph_objs import *
 
 
-
-
-
-
 df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/datasets/crimes-in-chicago/Chicago_Crimes_2012_to_2017.csv",sep=",")
 #df = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/ARP/finalProject/datasets/smalldatasetcrimes.csv",sep=",")
 df = df[df.Year == 2016]
-df = df[df['Primary Type']=='NARCOTICS']
+df = df[df['Primary Type']=='MOTOR VEHICLE THEFT']
 grouped = df.groupby(['Latitude','Longitude'])['Case Number'].count().reset_index(name="count")
 
 print(grouped)
@@ -50,4 +46,4 @@ layout = Layout(
 )
 
 fig = dict(data=data, layout=layout)
-py.iplot(fig, filename='NARCOTICS',image='png')
+py.iplot(fig, filename='MOTOR VEHICLE THEFT',image='png')

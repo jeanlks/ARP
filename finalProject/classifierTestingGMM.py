@@ -1,15 +1,13 @@
 
 
 import pandas as pd
-import numpy as np
 from pandas.tseries.holiday import  USFederalHolidayCalendar
 from math import radians, cos, sin, asin, sqrt
 from sklearn.mixture.bayesian_mixture import BayesianGaussianMixture
-from sklearn.naive_bayes import GaussianNB
 from sklearn.cross_validation import train_test_split
-from sklearn.metrics import confusion_matrix
-from sklearn.cross_validation import StratifiedKFold
+from sklearn.mixture import BayesianGaussianMixture
 from sklearn.metrics import accuracy_score
+import  numpy as np
 
 def getHolidays(dates):
     holidaysVectorReturn  = []
@@ -124,7 +122,7 @@ dataset = dataset.drop(columnsForExclusion,axis=1)
 #Get dummies and categorical values for columns
 columnsForDummies = ["Period"]
 dataset = pd.get_dummies(dataset,columns=columnsForDummies)
-#Erase period column because of the dummy trap 
+#Erase period column because of the dummy trap
 dataset = dataset.drop("Period_3",axis=1)
 
 dataset['Primary Type'] = pd.Categorical(dataset['Primary Type'])
@@ -158,18 +156,18 @@ y = dataset.iloc[:,0].values
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 1)
 
-from sklearn.naive_bayes import GaussianNB
-classifier = GaussianNB()
-classifier.fit(X_train, y_train)
+classifier = BayesianGaussianMixture(n_components = 3, covariance_type='spherical')
+classifier.fit(X_train,y_train)
 y_pred = classifier.predict(X_test)
-
+score = accuracy_score(y_pred,y_test)
 
 
 # Applying k-Fold Cross Validation
 from sklearn.model_selection import cross_val_score
 accuracies = cross_val_score(estimator = classifier, X = X_train, y = y_train, cv = 10)
-print(accuracies.mean())
-print(accuracies.std())
+
+
+
 
 
 
