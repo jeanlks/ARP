@@ -1,5 +1,3 @@
-
-
 import pandas as pd
 from pandas.tseries.holiday import  USFederalHolidayCalendar
 from math import radians, cos, sin, asin, sqrt
@@ -70,13 +68,8 @@ classes = ["THEFT",
 
 dataset = dataset[dataset['Primary Type'].isin(classes)]
 
-
 #convert dates to pandas datetime format
 dataset.Date = pd.to_datetime(dataset.Date, format='%m/%d/%Y %I:%M:%S %p')
-# setting the index to be the date will help us a lot later on
-
-
-
 
 dataset.loc[:, 'month'] = dataset['Date'].dt.month
 dataset.loc[:,'day'] = dataset['Date'].dt.day
@@ -108,6 +101,7 @@ dataset = dataset.drop(columnsForExclusion,axis=1)
 #Get dummies and categorical values for columns
 columnsForDummies = ["Period"]
 dataset = pd.get_dummies(dataset,columns=columnsForDummies)
+
 #Erase period column because of the dummy trap
 dataset = dataset.drop("Period_3",axis=1)
 
@@ -115,27 +109,20 @@ dataset = dataset.drop("Period_3",axis=1)
 dataset['Location Description'] = pd.Categorical(dataset['Location Description'])
 dataset['Domestic'] = pd.Categorical(dataset["Domestic"])
 
-
-
 dataset['Location Description']  = dataset['Location Description'].cat.codes
 dataset['Domestic'] = dataset['Domestic'].cat.codes
-
-
 
 #Rearranging columns
 cols = ['Primary Type'] + [col for col in dataset if col != 'Primary Type']
 dataset = dataset[cols]
-
 
 print(dataset.columns.tolist())
 
 print("Dataset size",len(dataset))
 #Remove empty rows
 
-
 dataset.dropna(inplace=True)
 
 dataset.to_csv('crimes2016THEFTandBATTERYandASSAULT.csv', index=False, encoding='utf-8')
-
 print("CSV FILE GENERATED")
 
