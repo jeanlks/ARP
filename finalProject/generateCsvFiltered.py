@@ -63,8 +63,7 @@ dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/d
 dataset = dataset[dataset.Year == 2016]
 
 classes = ["THEFT",
-            "BATTERY",
-           "ASSAULT"]
+            "BATTERY"]
 
 dataset = dataset[dataset['Primary Type'].isin(classes)]
 
@@ -105,10 +104,11 @@ dataset = pd.get_dummies(dataset,columns=columnsForDummies)
 #Erase period column because of the dummy trap
 dataset = dataset.drop("Period_3",axis=1)
 
-
+dataset['Primary Type'] = pd.Categorical(dataset['Primary Type'])
 dataset['Location Description'] = pd.Categorical(dataset['Location Description'])
 dataset['Domestic'] = pd.Categorical(dataset["Domestic"])
 
+dataset['Primary Type']  = dataset['Primary Type'].cat.codes
 dataset['Location Description']  = dataset['Location Description'].cat.codes
 dataset['Domestic'] = dataset['Domestic'].cat.codes
 
@@ -123,6 +123,6 @@ print("Dataset size",len(dataset))
 
 dataset.dropna(inplace=True)
 
-dataset.to_csv('crimes2016THEFTandBATTERYandASSAULT.csv', index=False, encoding='utf-8')
+dataset.to_csv('crimes2016THEFTandBATTERY.csv', index=False, encoding='utf-8')
 print("CSV FILE GENERATED")
 

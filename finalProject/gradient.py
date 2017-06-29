@@ -32,8 +32,6 @@ dataset.Date = pd.to_datetime(dataset.Date, format='%m/%d/%Y %I:%M:%S %p')
 dataset.loc[:,'day'] = dataset['Date'].dt.day
 dataset.loc[:,'Period'] = getPeriodOfTheDay(dataset['Date'].dt.hour)
 
-# print(len(dataset['Date'].dt.hour))
-# print(len( getPeriodOfTheDay(dataset['Date'].dt.hour)))
 #Exclude not needed columns
 columnsForExclusion = ['Ward',
                        'FBI Code',
