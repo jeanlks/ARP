@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de23a54c-1c5b-4091-b284-22dc2b300174" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/finalProject/classifierTestingGMM.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypesFilteredOutliers.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoMotorVehicleByYEAR.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/finalProject/generateCsvFiltered.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesKMeans.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypesFilteredOutliers.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesOther.py" afterPath="$PROJECT_DIR$/finalProject/generateCsvFiltered.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/finalProject/classifierTestingGMM.py" afterPath="$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" afterPath="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py" afterPath="$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoNarcoticsByYEAR.py" afterPath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoNarcoticsByYEAR.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py" afterPath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoBatteryByYEAR.py" afterPath="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoBatteryByYEAR.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,48 +23,80 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="classificationCrimesOther.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesOther.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2430">
-              <caret line="166" column="105" lean-forward="false" selection-start-line="166" selection-start-column="3" selection-end-line="166" selection-end-column="105" />
-              <folding>
-                <element signature="e#2#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classificationCrimesNaiveBayes.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
-              <folding>
-                <element signature="e#2#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classifierTestingGMM.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finalProject/classifierTestingGMM.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-              <folding>
-                <element signature="e#2#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classificationCrimesKNN.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="classificationCrimesKNN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesKNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1575">
-              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state relative-caret-position="341">
+              <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classificationCrimesNaiveBayes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+              <folding>
+                <element signature="e#2#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphCrimesChicagoAllTypes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classificationCrimesRandomForest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-208">
+              <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+              <folding>
+                <element signature="e#2#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphCrimesChicagoAssaultByYEAR.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAssaultByYEAR.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="generateCsvFiltered.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finalProject/generateCsvFiltered.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-913">
+              <caret line="68" column="19" lean-forward="false" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
+              <folding>
+                <element signature="e#2#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gradient.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/finalProject/gradient.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1273">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,26 +109,6 @@
               <folding>
                 <element signature="e#1#20#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphCrimesChicagoAllTypes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphCrimesByYear.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesByYear.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -116,14 +132,21 @@
         <option value="$PROJECT_DIR$/finalProject/graphs/CrimesByYear.py" />
         <option value="$PROJECT_DIR$/finalProject/nn.py" />
         <option value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesByYear.py" />
-        <option value="$PROJECT_DIR$/finalProject/classificationCrimesOther.py" />
         <option value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoNarcoticsByYEAR.py" />
         <option value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoMotorVehicleByYEAR.py" />
         <option value="$PROJECT_DIR$/finalProject/graphs/plotAllByYear.py" />
         <option value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypesFilteredOutliers.py" />
         <option value="$PROJECT_DIR$/finalProject/graphs/classifierTestingGMM.py" />
+        <option value="$PROJECT_DIR$/finalProject/generateCsv.py" />
+        <option value="$PROJECT_DIR$/finalProject/classificationCrimesOther.py" />
+        <option value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoBatteryByYEAR.py" />
+        <option value="$PROJECT_DIR$/finalProject/classificationCrimesKMeans.py" />
+        <option value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py" />
         <option value="$PROJECT_DIR$/finalProject/classifierTestingGMM.py" />
         <option value="$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py" />
+        <option value="$PROJECT_DIR$/finalProject/generateCsvFiltered.py" />
+        <option value="$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py" />
+        <option value="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" />
       </list>
     </option>
   </component>
@@ -147,11 +170,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="repositorio" />
+              <option name="myItemId" value="ARP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -161,7 +186,7 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="repositorio" />
+              <option name="myItemId" value="ARP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -175,8 +200,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -201,7 +224,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.classifierTestingGMM">
+  <component name="RunManager" selected="Python.classificationCrimesKNN">
     <configuration default="false" name="classificationCrimesNaiveBayes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -220,43 +243,43 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="GraphCrimesChicagoNarcoticsByYEAR" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="classifierTestingGMM (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/finalProject/graphs" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/finalProject" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoNarcoticsByYEAR.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="plotAllByYear" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="generateCsv" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/finalProject/graphs" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/finalProject" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/finalProject/graphs/plotAllByYear.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/finalProject/generateCsvFiltered.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="GraphCrimesChicagoAllTypesFilteredOutliers" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="GraphCrimesChicagoAllTypes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -268,25 +291,25 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypesFilteredOutliers.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="classifierTestingGMM" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="classificationCrimesKNN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/finalProject/graphs" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/finalProject" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="finalProject" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/finalProject/graphs/classifierTestingGMM.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -358,18 +381,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.classificationCrimesNaiveBayes" />
-      <item index="1" class="java.lang.String" itemvalue="Python.GraphCrimesChicagoNarcoticsByYEAR" />
-      <item index="2" class="java.lang.String" itemvalue="Python.plotAllByYear" />
-      <item index="3" class="java.lang.String" itemvalue="Python.GraphCrimesChicagoAllTypesFilteredOutliers" />
-      <item index="4" class="java.lang.String" itemvalue="Python.classifierTestingGMM" />
+      <item index="1" class="java.lang.String" itemvalue="Python.classifierTestingGMM (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.generateCsv" />
+      <item index="3" class="java.lang.String" itemvalue="Python.GraphCrimesChicagoAllTypes" />
+      <item index="4" class="java.lang.String" itemvalue="Python.classificationCrimesKNN" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.classifierTestingGMM" />
-        <item index="1" class="java.lang.String" itemvalue="Python.classificationCrimesNaiveBayes" />
-        <item index="2" class="java.lang.String" itemvalue="Python.GraphCrimesChicagoAllTypesFilteredOutliers" />
-        <item index="3" class="java.lang.String" itemvalue="Python.plotAllByYear" />
-        <item index="4" class="java.lang.String" itemvalue="Python.GraphCrimesChicagoNarcoticsByYEAR" />
+        <item index="0" class="java.lang.String" itemvalue="Python.classificationCrimesKNN" />
+        <item index="1" class="java.lang.String" itemvalue="Python.classifierTestingGMM (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.generateCsv" />
+        <item index="3" class="java.lang.String" itemvalue="Python.classificationCrimesNaiveBayes" />
+        <item index="4" class="java.lang.String" itemvalue="Python.GraphCrimesChicagoAllTypes" />
       </list>
     </recent_temporary>
   </component>
@@ -387,10 +410,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52724594" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -415,61 +437,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="26" column="39" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesOther.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesByYear.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="60" lean-forward="false" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
-          <folding>
-            <element signature="e#2#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesOther.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#2#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -501,7 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -523,9 +498,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#2#21#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -550,9 +523,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#2#21#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -560,7 +531,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -606,9 +576,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding>
-            <element signature="e#2#21#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -619,13 +587,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/nn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/nn.py" />
     <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesByYear.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -639,13 +601,6 @@
     <entry file="file://$PROJECT_DIR$/finalProject/2016-us-election/county_facts.csv" />
     <entry file="file://$PROJECT_DIR$/finalProject/2016-us-election/primary_results.csv" />
     <entry file="file://$PROJECT_DIR$/finalProject/test.py" />
-    <entry file="file://$PROJECT_DIR$/finalProject/nn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="116" column="51" lean-forward="false" selection-start-line="116" selection-start-column="51" selection-end-line="116" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/finalProject/graphs/boxPlot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -696,36 +651,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesKMeans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1035">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesKNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypesFilteredOutliers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="872">
-          <caret line="100" column="18" lean-forward="false" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/graphs/classifierTestingGMM.py" />
     <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoMotorVehicleByYEAR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -736,13 +662,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesOther.py">
+    <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypesFilteredOutliers.py" />
+    <entry file="file://$PROJECT_DIR$/finalProject/nn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2430">
-          <caret line="166" column="105" lean-forward="false" selection-start-line="166" selection-start-column="3" selection-end-line="166" selection-end-column="105" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoBatteryByYEAR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#2#21#0" expanded="true" />
+            <element signature="e#1#20#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesKMeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="142" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="142" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -754,31 +697,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/graphs/classifierTestingGMM.py">
+    <entry file="file://$PROJECT_DIR$/finalProject/crimes2016.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+        <state relative-caret-position="-17">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classifierTestingGMM.py">
+    <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-          <folding>
-            <element signature="e#2#21#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="20">
+          <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+        <state relative-caret-position="63">
+          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
           <folding>
             <element signature="e#2#21#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAssaultByYEAR.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/gradient.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1273">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/generateCsvFiltered.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-913">
+          <caret line="68" column="19" lean-forward="false" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
+          <folding>
+            <element signature="e#2#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding>
+            <element signature="e#2#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesOther.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesKNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
