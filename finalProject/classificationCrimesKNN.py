@@ -1,6 +1,6 @@
 import pandas as pd
 
-dataset = pd.read_csv("crimes2016THEFTandBATTERYandASSAULT.csv",sep=",")
+dataset = pd.read_csv("crimes2016OnlyLocations.csv",sep=",")
 
 
 #Splitting dependent and independent variables
