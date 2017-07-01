@@ -8,7 +8,7 @@ X = dataset.iloc[:,1:13].values
 y = dataset.iloc[:,0].values
 
 # Splitting the dataset into the Training set and Test set
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 1)
 
 #KNN Classifier

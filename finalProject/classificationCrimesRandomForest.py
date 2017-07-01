@@ -1,9 +1,9 @@
 import pandas as pd
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-dataset = pd.read_csv("crimes2016THEFTandBATTERY.csv",sep=",")
+dataset = pd.read_csv("crimes2016THEFTandBATTERYandASSAULT.csv",sep=",")
 
 #Splitting dependent and independent variables
 X = dataset.iloc[:,1:13].values

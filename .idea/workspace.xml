@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de23a54c-1c5b-4091-b284-22dc2b300174" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/finalProject/classificationGMM.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/finalProject/crimes2016THEFTANDBATTERY.csv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/crimes2016.csv" afterPath="$PROJECT_DIR$/finalProject/crimes2016.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/crimes2016THEFTandBATTERYandASSAULT.csv" afterPath="$PROJECT_DIR$/finalProject/crimes2016THEFTandBATTERYandASSAULT.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/generateCsvFiltered.py" afterPath="$PROJECT_DIR$/finalProject/generateCsvFiltered.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/gradient.py" afterPath="$PROJECT_DIR$/finalProject/gradient.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" afterPath="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py" afterPath="$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py" afterPath="$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/finalProject/classificationGMM.py" afterPath="$PROJECT_DIR$/finalProject/classificationGMM.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +20,8 @@
       <file leaf-file-name="classificationCrimesKNN.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesKNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -33,8 +30,8 @@
       <file leaf-file-name="classificationCrimesNaiveBayes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+            <state relative-caret-position="15">
+              <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -53,11 +50,9 @@
       <file leaf-file-name="classificationCrimesRandomForest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,11 +60,9 @@
       <file leaf-file-name="classificationGMM.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/finalProject/classificationGMM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-              <folding>
-                <element signature="e#1#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,11 +131,11 @@
         <option value="$PROJECT_DIR$/finalProject/classificationCrimesKMeans.py" />
         <option value="$PROJECT_DIR$/finalProject/graphs/GraphCrimesChicagoAllTypes.py" />
         <option value="$PROJECT_DIR$/finalProject/classifierTestingGMM.py" />
-        <option value="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" />
-        <option value="$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py" />
-        <option value="$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py" />
         <option value="$PROJECT_DIR$/finalProject/gradient.py" />
         <option value="$PROJECT_DIR$/finalProject/generateCsvFiltered.py" />
+        <option value="$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py" />
+        <option value="$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py" />
+        <option value="$PROJECT_DIR$/finalProject/classificationCrimesKNN.py" />
         <option value="$PROJECT_DIR$/finalProject/classificationGMM.py" />
       </list>
     </option>
@@ -221,7 +214,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.classificationGMM">
+  <component name="RunManager" selected="Python.classifierTestingGMM (1)">
     <configuration default="false" name="classificationCrimesNaiveBayes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -385,10 +378,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.classificationGMM" />
-        <item index="1" class="java.lang.String" itemvalue="Python.generateCsv" />
-        <item index="2" class="java.lang.String" itemvalue="Python.classificationCrimesKNN" />
-        <item index="3" class="java.lang.String" itemvalue="Python.classifierTestingGMM (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.classifierTestingGMM (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.classificationGMM" />
+        <item index="2" class="java.lang.String" itemvalue="Python.generateCsv" />
+        <item index="3" class="java.lang.String" itemvalue="Python.classificationCrimesKNN" />
         <item index="4" class="java.lang.String" itemvalue="Python.classificationCrimesNaiveBayes" />
       </list>
     </recent_temporary>
@@ -407,7 +400,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -692,14 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesKNN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/finalProject/GenerateModel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -726,21 +711,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py">
+    <entry file="file://$PROJECT_DIR$/finalProject/crimes2016THEFTandBATTERY.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -754,21 +729,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/finalProject/crimes2016THEFTandBATTERY.csv">
+    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesNaiveBayes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesKNN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/finalProject/classificationCrimesRandomForest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/finalProject/classificationGMM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-          <folding>
-            <element signature="e#1#20#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
