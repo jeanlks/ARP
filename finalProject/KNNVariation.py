@@ -3,7 +3,7 @@ from  sklearn.metrics import accuracy_score
 from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt
 
-dataset = pd.read_csv("crimes2016THEFTandBATTERYandASSAULT.csv",sep=",")
+dataset = pd.read_csv("crimes2016OnlyLocations.csv",sep=",")
 
 
 #Splitting dependent and independent variables
@@ -26,5 +26,5 @@ for i in range(1,100):
 
 
 plt.plot(accuracies)
-plt.title("Theft and Battery and ASSAULT K variation")
+plt.title("Crimes 2016 K variation")
 plt.show()

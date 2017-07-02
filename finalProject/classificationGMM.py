@@ -5,7 +5,7 @@ from sklearn.mixture import GaussianMixture
 from sklearn.metrics import accuracy_score
 import numpy as np
 
-dataset = pd.read_csv("crimes2016OnlyLocations.csv",sep=",")
+dataset = pd.read_csv("crimes2016THEFTandBATTERY.csv",sep=",")
 
 X = dataset.iloc[:,1:9].values
 y = dataset.iloc[:,0].values

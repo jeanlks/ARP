@@ -121,8 +121,9 @@ print(dataset.columns.tolist())
 print("Dataset size",len(dataset))
 #Remove empty rows
 
-dataset.dropna(inplace=True)
+#dataset.dropna(inplace=True)
 
-dataset.to_csv('crimes2016THEFTandBATTERY.csv', index=False, encoding='utf-8')
+
+dataset.to_csv('crimes2016OnlyLocationsNOTNULL.csv', index=False, encoding='utf-8')
 print("CSV FILE GENERATED")
 
