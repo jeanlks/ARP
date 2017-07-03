@@ -10,6 +10,12 @@ dataset = pd.read_csv("crimes2016THEFTandBATTERY.csv",sep=",")
 X = dataset.iloc[:,1:9].values
 y = dataset.iloc[:,0].values
 
+
+from sklearn.preprocessing import Imputer
+imputer = Imputer(missing_values='NaN', strategy='mean',axis=0)
+imputer = imputer.fit(X[:,1:9])
+X[:,1:9] = imputer.transform(X[:,1:9])
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 1)
 
 

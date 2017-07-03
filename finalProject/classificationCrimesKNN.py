@@ -1,11 +1,16 @@
 import pandas as pd
 
-dataset = pd.read_csv("crimes2016OnlyLocations.csv",sep=",")
+dataset = pd.read_csv("crimes2016THEFTandBATTERYandASSAULT.csv",sep=",")
 
 
 #Splitting dependent and independent variables
-X = dataset.iloc[:,1:13].values
+X = dataset.iloc[:,1:9].values
 y = dataset.iloc[:,0].values
+
+from sklearn.preprocessing import Imputer
+imputer = Imputer(missing_values='NaN', strategy='mean',axis=0)
+imputer = imputer.fit(X[:,1:9])
+X[:,1:9] = imputer.transform(X[:,1:9])
 
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
