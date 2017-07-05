@@ -62,9 +62,9 @@ dataset = pd.read_csv("/Users/Jean/Documents/Software Engineering/UFG/mestrado/d
 
 dataset = dataset[dataset.Year == 2016]
 
-classes = ["THEFT",
-            "BATTERY",
-           "ASSAULT"]
+classes = ["HOMICIDE",
+           "MOTOR VEHICLE THEFT",
+           "NARCOTICS"]
 
 dataset = dataset[dataset['Primary Type'].isin(classes)]
 
@@ -125,6 +125,6 @@ print("Dataset size",len(dataset))
 #dataset.dropna(inplace=True)
 
 
-dataset.to_csv('crimes2016THEFTandBATTERYandASSAULT.csv', index=False, encoding='utf-8')
+dataset.to_csv('crimes2016HOMICIDEandMOTORandNARCOTICS.csv', index=False, encoding='utf-8')
 print("CSV FILE GENERATED")
 

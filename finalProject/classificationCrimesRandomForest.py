@@ -3,7 +3,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-dataset = pd.read_csv("crimes2016THEFTandBATTERY.csv",sep=",")
+
+dataset = pd.read_csv("crimes2016HOMICIDEandMOTORandNARCOTICS.csv",sep=",")
 #Splitting dependent and independent variables
 X = dataset.iloc[:,1:9].values
 y = dataset.iloc[:,0].values
@@ -13,9 +14,11 @@ imputer = Imputer(missing_values='NaN', strategy='mean',axis=0)
 imputer = imputer.fit(X[:,1:9])
 X[:,1:9] = imputer.transform(X[:,1:9])
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 1)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state = 0)
 
-classifier = RandomForestClassifier(n_estimators=200, class_weight='balanced')
+
+
+classifier = RandomForestClassifier(n_estimators=100, class_weight='balanced',criterion='entropy',random_state=0)
 classifier.fit(X_train, y_train)
 y_pred = classifier.predict(X_test)
 score = accuracy_score(y_pred,y_test)

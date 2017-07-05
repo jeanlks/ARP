@@ -1,6 +1,6 @@
 import pandas as pd
 
-dataset = pd.read_csv("crimes2016THEFTandBATTERYandASSAULT.csv",sep=",")
+dataset = pd.read_csv("crimes2016HOMICIDEandMOTORandNARCOTICS.csv",sep=",")
 
 
 #Splitting dependent and independent variables
@@ -18,7 +18,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, rand
 
 #KNN Classifier
 from sklearn.neighbors import KNeighborsClassifier
-classifier = KNeighborsClassifier(n_neighbors = 100, metric = 'minkowski',p=1)
+classifier = KNeighborsClassifier(n_neighbors = 15, metric = 'minkowski',p=1)
 classifier.fit(X_train, y_train)
 y_pred = classifier.predict(X_test)
 

@@ -5,7 +5,7 @@ from sklearn.mixture import GaussianMixture
 from sklearn.metrics import accuracy_score
 import numpy as np
 
-dataset = pd.read_csv("crimes2016THEFTandBATTERY.csv",sep=",")
+dataset = pd.read_csv("crimes2016HOMICIDEandMOTORandNARCOTICS.csv",sep=",")
 
 X = dataset.iloc[:,1:9].values
 y = dataset.iloc[:,0].values
@@ -22,7 +22,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, rand
 lowest_bic = np.infty
 bic = []
 
-for n_components in range(1,3):
+for n_components in range(1,4):
     classifier = GaussianMixture(n_components=n_components, covariance_type='full')
     classifier.fit(X_train, y_train)
     bic.append(classifier.bic(X))
